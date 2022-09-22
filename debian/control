@@ -1,0 +1,57 @@
+Source: python-tidylib
+Section: python
+Priority: optional
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders: Dmitry Shachnev <mitya57@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               latexmk,
+               libtidy-dev,
+               python3-all,
+               python3-sphinx,
+               tex-gyre,
+               texlive-fonts-recommended,
+               texlive-latex-extra,
+               texlive-plain-generic
+Standards-Version: 4.6.0
+Homepage: https://countergram.github.io/pytidylib/
+Vcs-Git: https://salsa.debian.org/python-team/packages/python-tidylib.git
+Vcs-Browser: https://salsa.debian.org/python-team/packages/python-tidylib
+
+Package: python3-tidylib
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}, libtidy5deb1
+Description: Python 3 wrapper for HTML Tidy (tidylib)
+ PyTidyLib is a Python package that wraps the HTML Tidy library. This allows
+ you, from Python code, to “fix” invalid (X)HTML markup. Some of the library’s
+ many capabilities include:
+ .
+  * Clean up unclosed tags and unescaped characters such as ampersands
+  * Output HTML 4 or XHTML, strict or transitional, and add missing doctypes
+  * Convert named entities to numeric entities, which can then be used in XML
+    documents without an HTML doctype.
+  * Clean up HTML from programs such as Word (to an extent)
+  * Indent the output, including proper (i.e. no) indenting for pre elements,
+    which some (X)HTML indenting code overlooks.
+ .
+ This is the Python 3 version of the module.
+
+Package: pytidylib-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}, ${sphinxdoc:Depends}
+Multi-Arch: foreign
+Description: Python wrapper for HTML Tidy (tidylib) documentation
+ PyTidyLib is a Python package that wraps the HTML Tidy library. This allows
+ you, from Python code, to “fix” invalid (X)HTML markup. Some of the library’s
+ many capabilities include:
+ .
+  * Clean up unclosed tags and unescaped characters such as ampersands
+  * Output HTML 4 or XHTML, strict or transitional, and add missing doctypes
+  * Convert named entities to numeric entities, which can then be used in XML
+    documents without an HTML doctype.
+  * Clean up HTML from programs such as Word (to an extent)
+  * Indent the output, including proper (i.e. no) indenting for pre elements,
+    which some (X)HTML indenting code overlooks.
+ .
+ This package contains the built HTML and PDF documentation for PyTidyLib.

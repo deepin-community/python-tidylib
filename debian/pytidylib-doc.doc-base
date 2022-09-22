@@ -1,0 +1,11 @@
+Document: pytidylib
+Title: PyTidyLib Documentation
+Author: Jason Stitt
+Abstract: PyTidyLib is a Python package that wraps the HTML Tidy library.
+ This allows you, from Python code, to “fix” invalid (X)HTML markup. Some of
+ the library’s many capabilities.
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python3-tidylib/html/index.html
+Files: /usr/share/doc/python3-tidylib/html/*.html

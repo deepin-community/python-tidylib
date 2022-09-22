@@ -1,0 +1,192 @@
+python-tidylib (0.3.2~dfsg-7) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 11 to 12.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit.
+  * Apply multi-arch hints.
+    + pytidylib-doc: Add Multi-Arch: foreign.
+
+  [ Ondřej Nový ]
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Dmitry Shachnev ]
+  * Build-depend on tex-gyre, to fix PDF docs build with Sphinx 4
+    (closes: #997463).
+  * Update to debhelper compat level 13.
+  * Install the docs into /usr/share/doc/python3-tidylib, as encouraged
+    by Policy §12.3.
+  * Bump Standards-Version to 4.6.0, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sun, 24 Oct 2021 13:31:49 +0300
+
+python-tidylib (0.3.2~dfsg-6) unstable; urgency=medium
+
+  [ Emmanuel Arias ]
+  * d/control: Bump Standards-Version to 4.5.0.
+  * Remove Python 2 support (Closes: #938217).
+  * d/salsa-ci.yml: enable salsa-ci.
+
+  [ Dmitry Shachnev ]
+  * Also drop the Python 2 autopkgtest.
+  * Make the Python 3 autopkgtest depend on python3-all.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Tue, 03 Mar 2020 10:54:39 +0300
+
+python-tidylib (0.3.2~dfsg-5) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Use debhelper-compat instead of debian/compat.
+
+  [ Dmitry Shachnev ]
+  * Build-depend on texlive-plain-generic instead of texlive-generic-extra
+    which was removed from testing (closes: #933583).
+  * Bump Standards-Version to 4.4.0, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Thu, 01 Aug 2019 21:27:51 +0300
+
+python-tidylib (0.3.2~dfsg-4) unstable; urgency=medium
+
+  * Depend on libtidy5deb1 instead of libtidy5.6 (closes: #911905).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sun, 28 Oct 2018 10:40:46 +0300
+
+python-tidylib (0.3.2~dfsg-3) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/tests: Use AUTOPKGTEST_TMP instead of ADTTMP
+  * Convert git repository from git-dpm to gbp layout
+  * Use 'python3 -m sphinx' instead of sphinx-build for building docs
+
+  [ Dmitry Shachnev ]
+  * Depend on libtidy5.6 instead of libtidy5 (closes: #910995).
+  * Use https for Homepage URL.
+  * Update debhelper compat level to 11.
+  * Drop dh_auto_clean override in favor of debian/clean.
+  * Bump Standards-Version to 4.2.1, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sun, 14 Oct 2018 18:25:31 +0300
+
+python-tidylib (0.3.2~dfsg-2) unstable; urgency=medium
+
+  * Set DPMT as Maintainer and add myself to Uploaders (closes: #849730).
+    Thanks to Janos Guljas for his past work on this package!
+  * Build-depend on latexmk to fix build with Sphinx 1.6.
+  * Update Homepage URL.
+  * Bump Standards-Version to 4.0.0, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Mon, 14 Aug 2017 20:49:53 +0300
+
+python-tidylib (0.3.2~dfsg-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream bugfix release.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Thu, 15 Dec 2016 11:30:59 +0300
+
+python-tidylib (0.3.1~dfsg-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Drop 0001-Make-the-tests-pass-with-tidylib-5-fixes-13.patch, applied
+    in the new version.
+  * Drop 0002-Use-find_library.patch, no longer needed.
+  * Bump year in debian/copyright.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Fri, 21 Oct 2016 19:28:48 +0300
+
+python-tidylib (0.3.0~dfsg-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Add a patch to use ctypes.util.find_library instead of the hard-coded
+    list of library names (0002-Use-find_library.patch, closes: #838197).
+  * Add autopkgtests, running upstream test suite.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sun, 25 Sep 2016 13:37:46 +0300
+
+python-tidylib (0.2.4~dfsg-4) unstable; urgency=medium
+
+  * Team upload.
+  * Also change python3-tidylib's dependency over to libtidy5.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Tue, 13 Sep 2016 21:01:30 +0000
+
+python-tidylib (0.2.4~dfsg-3) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * Fixed VCS URL (https).
+
+  [ Jeremy Bicha ]
+  * debian/control:
+    - Build-Depend on libtidy-dev.
+    - Depend on libtidy5 instead of libtidy-0.99-0.
+    - Build-depend on texlive-generic-extra for iftex.sty.  Closes: #828900
+
+  [ Dmitry Shachnev ]
+  * Make the tests pass with tidylib 5.  Closes: #829178
+
+  [ Mattia Rizzolo ]
+  * Bump Standards-Version to 3.9.8, no changes needed.
+  * Bump debhelper compat level to 10.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Tue, 13 Sep 2016 08:34:17 +0000
+
+python-tidylib (0.2.4~dfsg-2) unstable; urgency=medium
+
+  * Team upload.
+  * Rename doc-base file to avoid file conflict with old python-tidylib
+    versions (closes: #808322).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sun, 07 Feb 2016 21:31:24 +0300
+
+python-tidylib (0.2.4~dfsg-1) unstable; urgency=low
+
+  * Team upload, with maintainer's permission.
+
+  [ Jakub Wilk ]
+  * Use canonical URIs for Vcs-* fields.
+  * Remove DM-Upload-Allowed; it's no longer used by the archive
+    software.
+
+  [ Janos Guljas ]
+  * Run tests during build. (Closes: #711078)
+    - Build depend on libtidy-0.99-0.
+  * Change my email address.
+  * Update copyright year in debian/copyright.
+
+  [ Dmitry Shachnev ]
+  * New upstream release.
+  * Update debian/watch.
+  * Exclude docs/html directory from the tarball, as it contains minified JS
+    files without source.
+  * Switch to pybuild buildsystem and build a python3-tidylib package
+    (closes: #756001).
+  * Split the docs into a separate pytidylib-doc package.
+  * Use dh_sphinxdoc to symlink JavaScript files in the documentation.
+  * Prevent pytidylib.pdf from being compressed by dh_compress.
+  * Update debian/copyright.
+  * Bump Standards-Version to 3.9.6, no changes needed.
+  * Export PYTHONPATH when calling sphinx-build, so that autofunction
+    directive works.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Mon, 14 Dec 2015 22:00:41 +0300
+
+python-tidylib (0.2.1~dfsg-2) unstable; urgency=low
+
+  * Add libjs-underscore dependency and link to replace embeded
+    copy underscore.js file.
+  * Add DM-Upload-Allowed control field.
+
+ -- Janos Guljas <janos@resenje.org>  Mon, 26 Dec 2011 22:46:46 +0100
+
+python-tidylib (0.2.1~dfsg-1) unstable; urgency=low
+
+  * Initial release. (Closes: #623016)
+
+ -- Janos Guljas <janos@resenje.org>  Fri, 29 Apr 2011 00:03:51 +0200

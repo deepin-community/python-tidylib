@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=tidylib
+
+%:
+	dh $@ --with python3,sphinxdoc --buildsystem pybuild
+
+override_dh_auto_build:
+	dh_auto_build
+	PYTHONPATH=$(CURDIR) python3 -m sphinx -b latex docs/rst debian/latex
+	make -C debian/latex all-pdf
+	PYTHONPATH=$(CURDIR) python3 -m sphinx -b html docs/rst debian/html
+
+override_dh_installdocs:
+	dh_installdocs -p pytidylib-doc --doc-main-package python3-tidylib
+	dh_installdocs --remaining-packages
+
+override_dh_compress:
+	dh_compress -X.pdf
